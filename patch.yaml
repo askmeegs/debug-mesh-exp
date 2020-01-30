@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+ name: "patch-citadel"
+ namespace: istio-system
+spec:
+ host: "istio-citadel"
+ trafficPolicy:
+   tls:
+     mode: DISABLE
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+ name: "patch-ingressgateway"
+ namespace: istio-system
+spec:
+ host: "istio-ingressgateway"
+ trafficPolicy:
+   tls:
+     mode: DISABLE
